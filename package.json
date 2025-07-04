@@ -1,42 +1,23 @@
 {
-  "name": "ppt-theme",
+  "name": "ppt-theme-pure-ts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@radix-ui/react-separator": "^1.1.2",
-    "@radix-ui/react-slot": "^1.1.2",
     "bootstrap": "^5.3.5",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.11.1",
-    "lucide-react": "^0.487.0",
-    "path": "^0.12.7",
-    "react": "^19.1.0",
-    "react-bootstrap": "^2.10.9",
-    "react-dom": "^19.0.0",
-    "react-toastify": "^11.0.5",
-    "recharts": "^2.15.2",
-    "typescript": "^5.8.2"
+    "recharts": "^2.15.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
     "@types/node": "^22.14.0",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
     "postcss": "^8.5.3",
+    "typescript": "^5.8.2",
     "vite": "^6.2.0"
   }
 }
