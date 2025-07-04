@@ -1,26 +1,17 @@
 import { ChartData, ThemeColors } from '../types';
 import { DOMUtils } from '../utils/dom';
 
-declare global {
-  interface Window {
-    Recharts: any;
-  }
-}
-
 export class ChartManager {
   private charts: Map<string, any> = new Map();
 
   constructor() {
-    // Ensure Recharts is loaded
-    if (typeof window.Recharts === 'undefined') {
-      console.warn('Recharts library not loaded');
-    }
+    // Chart manager uses custom SVG rendering
   }
 
   public renderChart(containerId: string, chartData: ChartData, themeColors: ThemeColors): void {
     const container = DOMUtils.querySelector(`#${containerId}`);
-    if (!container || !window.Recharts) {
-      console.error('Chart container not found or Recharts not loaded');
+    if (!container) {
+      console.error('Chart container not found');
       return;
     }
 
@@ -67,9 +58,6 @@ export class ChartManager {
   }
 
   private renderChartByType(container: HTMLElement, chartData: ChartData, themeColors: ThemeColors): void {
-    const { Recharts } = window;
-    if (!Recharts) return;
-
     const chartColors = [
       themeColors.accent1,
       themeColors.accent2,
