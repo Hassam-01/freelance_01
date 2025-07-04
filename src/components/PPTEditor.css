@@ -1,0 +1,388 @@
+.ppt-editor {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  .editor-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .toolbar-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: white;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .toolbar-btn:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+  }
+  
+  .toolbar-btn.active {
+    background: #ebf8ff;
+    border-color: #4299e1;
+    color: #2b6cb0;
+  }
+  
+  .toolbar-btn.primary {
+    background: #4472C4;
+    border-color: #4472C4;
+    color: white;
+  }
+  
+  .toolbar-btn.success {
+    background: #48bb78;
+    border-color: #48bb78;
+    color: white;
+  }
+  
+  .toolbar-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .slide-counter {
+    padding: 0.25rem 0.75rem;
+    background: #f7fafc;
+    border-radius: 0.375rem;
+    color: #4a5568;
+    font-size: 0.875rem;
+  }
+  
+  .settings-panel {
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .settings-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .settings-section {
+    padding: 1rem;
+  }
+  
+  .settings-section h6 {
+    margin-bottom: 1rem;
+    color: #2d3748;
+    font-weight: 600;
+  }
+  
+  .theme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .theme-btn {
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .theme-btn.active {
+    border-color: #4472C4;
+  }
+  
+  .theme-preview {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .size-options {
+    display: inline-grid;
+    gap: 1rem;
+  }
+  
+  .size-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #212529;
+  }
+  
+  .size-btn.active {
+    background: #ebf8ff;
+    border-color: #4299e1;
+    color: #2b6cb0;
+  }
+  
+  .color-picker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .color-picker input {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+  }
+  
+  .editor-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .slides-sidebar {
+    width: 200px;
+    padding: 1rem;
+    background: white;
+    border-right: 1px solid #e2e8f0;
+    overflow-y: auto;
+  }
+  
+  .slide-thumbnail {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+  
+  .slide-thumbnail.active {
+    box-shadow: 0 0 0 2px #4472C4;
+  }
+  
+  .thumbnail-preview {
+    aspect-ratio: 16/9;
+    padding: 1rem;
+  }
+  
+  .thumbnail-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .thumbnail-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  
+  .thumbnail-text {
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+  
+  .thumbnail-number {
+    padding: 0.5rem;
+    background: #f7fafc;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #4a5568;
+  }
+  .thumbnail-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  background-color: #f0f0f0;
+}
+
+.edit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.edit-button:hover {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.edit-button.active {
+  background-color: #0066cc;
+  color: white;
+}
+
+.edit-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #0066cc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: inherit;
+  color: #333;
+}
+
+.title-input {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.content-input {
+  font-size: 12px;
+  resize: none;
+  height: 60px;
+}
+
+.thumbnail-content > div {
+  cursor: text;
+}
+
+  
+  .slide-editor {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+  
+  .slide-container {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  /* .slide-content {
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  } */
+  .slide-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container {
+  margin-top: 16px;
+}
+
+  
+  .slide-title {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+.slide-title[readonly],
+.slide-body[readonly] {
+  cursor: default;
+  pointer-events: none;
+  background: transparent;
+  border: none;
+}
+
+.slide-title:not([readonly]):hover,
+.slide-body:not([readonly]):hover {
+  border: 1px solid #0066cc;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.slide-title:not([readonly]):focus,
+.slide-body:not([readonly]):focus {
+  border: 2px solid #0066cc;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+.thumbnail-content[data-editing="false"] {
+  pointer-events: none;
+}
+
+.thumbnail-content[data-editing="true"] {
+  cursor: text;
+}
+
+.edit-button {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.edit-button:hover {
+  opacity: 1;
+}
+
+.edit-button.active {
+  opacity: 1;
+  background-color: #0066cc;
+  color: white;
+}
+
+  
+  .slide-body {
+    flex: 1;
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-size: 1.25rem;
+  }
+  
+  .charts-container {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .editor-toolbar {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  
+    .settings-content {
+      grid-template-columns: 1fr;
+    }
+  
+    .slides-sidebar {
+      width: 200px;
+    }
+  }
+  

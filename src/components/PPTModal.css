@@ -1,0 +1,131 @@
+.ppt-editor-modal .modal-content {
+    height: 90vh;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ppt-editor-modal .modal-body {
+    overflow-y: auto;
+  }
+  
+  .settings-container {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    min-height: 500px;
+  }
+  
+  .editor-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+  }
+  
+  .no-settings-warning {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background-color: #fff3cd;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .no-settings-warning p {
+    margin: 0;
+    color: #856404;
+  }
+  
+  .btn-close-custom {
+    background: none;
+    border: none;
+    padding: 8px;
+    color: #6c757d;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-close-custom:hover {
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+  
+  .btn-close-custom:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .btn-save {
+    padding: 10px 24px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background: linear-gradient(45deg, #4361ee, #3f37c9);
+    border: none;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
+  }
+  
+  .btn-save:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(67, 97, 238, 0.3);
+  }
+  
+  .btn-cancel {
+    padding: 10px 24px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: 1px solid #dee2e6;
+  }
+  
+  .btn-cancel:hover:not(:disabled) {
+    background-color: #f8f9fa;
+  }
+  
+  .modal-title {
+    font-weight: 600;
+    color: #2d3748;
+  }
+  
+  /* Custom scrollbar */
+  .modal-body::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .modal-body::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  
+  .modal-body::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+  
+  /* Spinner customization */
+  .spinner-border {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-width: 0.15em;
+  }
+  
+  /* Animation for modal appearance */
+  .modal.show .modal-content {
+    animation: modalSlideIn 0.3s ease-out;
+  }
+  
+  @keyframes modalSlideIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
